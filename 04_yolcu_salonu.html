@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yolcu Salonu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMK4uq5BqhszPr6jjT88W0QkL92E1D64W4QdS0" crossorigin="anonymous">
+
+    <style>
+        /* Genel sıfırlama */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #212529 !important;
+
+        }
+
+        /* Slider için stil */
+        #slider-yolcu {
+            height: 100vh;
+            /* Tam ekran yüksekliği */
+            width: 100vw;
+            /* Tam genişlik */
+            overflow: hidden;
+            /* Slider dışına taşmayı engeller */
+            margin-bottom: -180px;
+        }
+
+        #image-track {
+            display: flex;
+            gap: 4vmin;
+            position: relative;
+            /* absolute yerine relative kullanıldı */
+            left: 0;
+            /* Başlangıca hizalama */
+            top: 50%;
+            transform: translate(0%, -50%);
+            /* Sadece dikey merkezleme */
+
+            width: 100vw;
+            /* Tam genişlik */
+        }
+
+        #image-track .image {
+            width: 40vmin;
+            height: 56vmin;
+            object-fit: cover;
+            object-position: 100% center;
+            max-width: 100%;
+            /* Genişliğin aşırı büyümesini önler */
+            max-height: 100vh;
+            /* Yüksekliği sınırlamak için */
+        }
+
+        .baslik-yolcu{
+            margin-top: 30px;
+            margin-left: 650px;
+            margin-bottom: -150px;
+            color: white;
+        }
+
+
+        .img-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .img-container img {
+            width: 100%;
+            height: 50;
+        }
+
+        h3 {
+            color: white;
+        }
+
+        .ma-b {
+            margin-bottom: 60px;
+        }
+
+        .yolcu-card {
+            background-color: #000;
+
+        }
+        
+        p{
+            color:white;
+        }
+
+                /* Modal Stili */
+                .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/dako_logo_light-1.png" alt="Logo" width="350">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Anasayfa</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Projeler
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="devameden.html">Devam Eden Projeler</a></li>
+                            <li><a class="dropdown-item" href="tamamlanmiş.html">Biten Projeler</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="iletisim.html">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="slider-yolcu">
+        <h1 class="baslik-yolcu">Yolcu Salonu</h1>
+        <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+
+            <img class="image" src="img/yolcu_slider/1.jpeg" draggable="false" onclick="openModal(this)">
+
+            <img class="image" src="img/yolcu_slider/2.jpeg" draggable="false" onclick="openModal(this)">
+            <img class="image" src="img/yolcu_slider/3.jpeg" draggable="false" onclick="openModal(this)">
+            <img class="image" src="img/yolcu_slider/5.jpeg" draggable="false" onclick="openModal(this)">
+            <img class="image" src="img/yolcu_slider/6.jpeg" draggable="false" onclick="openModal(this)">
+            <img class="image" src="img/yolcu_slider/7.jpeg" draggable="false" onclick="openModal(this)">
+            <img class="image" src="img/yolcu_slider/9.jpeg" draggable="false" onclick="openModal(this)">
+            <img class="image" src="img/yolcu_slider/10.jpeg" draggable="false" onclick="openModal(this)">
+            <img class="image" src="img/yolcu_slider/11.jpeg" draggable="false" onclick="openModal(this)">
+        </div>
+
+          <!-- Modal Kutusu -->
+          <div id="modal" class="modal" onclick="closeModal()">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImg">
+        </div>
+
+
+
+
+
+    </section>
+
+
+    <section>
+        <div class="container ">
+            <p>1930’lu yılların başlarında limanda gemi yolcularının karşılanmasına yönelik ihtiyaç gelen gemi sayısının çoğalmasıyla artmıştır. Bu ihtiyacın giderilmesi için İstanbul Liman işletme İdaresi’nin 1936 yılında açtığı yarışma sonucunda Rebii Gorbon’un projesi birinci seçilmiştir. Bu proje iki buçuk yıl içerisinde inşa edilmiş ve 1940 yılında kullanıma açılmıştır. Yolcu Salonu’nun kulesinde bulunan saat, II. Abdülhamid’in saatçisi olan Mustafa Şem’i tarafından yapılmıştır. Günümüze kadar, Kılavuzluk Servisi’ne, Denizyolları İşletmesinin Muhasebe Servisi’ne ve Liman Lokantası’na ev sahipliği yapmış olan Yolcu Salonu Peninsula Hotel projesi ile otele dahil edilmiştir.
+            </p>
+        </div>
+    </section>
+    
+    <div class="text-center" style="transform: translateY(60px); padding: 10px;">
+        <p class="display-6 text-white ">Merkez Han Restorasyon Öncesi ve Restorasyon Sonrası</p>
+    </div>
+
+        <section id="yolcu-card">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-6 img-container ma-b">
+<!--                         <h3>ÖNCESİ</h3> -->
+                        <img src="img/yolcu_oncesi_sonrası/01-öncesi.jpg" height="" alt="Öncesi Resmi">
+                    </div>
+                    <div class="col-md-6 img-container ma-b">
+<!--                         <h3>SONRASI</h3> -->
+                        <img src="img/yolcu_oncesi_sonrası/01-sonrası.jpeg" alt="Sonrası Resmi">
+                    </div>
+    
+                    <div class="col-md-6 img-container">
+                        <img src="img/yolcu_oncesi_sonrası/02-öncesi.jpg" alt="Öncesi Resmi">
+                    </div>
+    
+                    <div class="col-md-6 img-container ">
+                        <img src="img/yolcu_oncesi_sonrası/02-sonrası.jpeg" alt="Sonrası Resmi">
+                    </div>
+    
+                    <div class="col-md-6 img-container ">
+                        <img src="img/yolcu_oncesi_sonrası/04-öncesi.jpg" alt="Öncesi Resmi">
+                    </div>
+    
+                    <div class="col-md-6 img-container ">
+                        <img src="img/yolcu_oncesi_sonrası/04-sonrası.jpeg" alt="Sonrası Resmi">
+                    </div>
+                    <div class="col-md-6 img-container ">
+                        <img src="img/yolcu_oncesi_sonrası/05-öncesi-scaled.jpg" alt="Öncesi Resmi">
+                    </div>
+    
+                    <div class="col-md-6 img-container ">
+                        <img src="img/yolcu_oncesi_sonrası/05-sonrası.jpeg" alt="Sonrası Resmi">
+                    </div>
+                    
+                </div>
+            </div>
+
+    </section>
+    <script src="scp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        const track = document.getElementById("image-track");
+
+        window.onmousedown = (e) => {
+            track.dataset.mouseDownAt = e.clientX;
+        };
+
+        window.onmouseup = () => {
+            track.dataset.mouseDownAt = "0";
+            track.dataset.prevPercentage = track.dataset.percentage;
+        };
+
+        window.onmousemove = (e) => {
+            if (track.dataset.mouseDownAt === "0") return;
+
+            const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+                maxDelta = window.innerWidth / 2;
+
+            const percentage = (mouseDelta / maxDelta) * -100,
+                nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+                nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+
+            track.dataset.percentage = nextPercentage;
+
+            track.animate({
+                transform: `translate(${nextPercentage}%, -50%)`
+            }, { duration: 1200, fill: "forwards" });
+
+            for (const image of track.getElementsByClassName("image")) {
+                image.animate({
+                    objectPosition: `${100 + nextPercentage}% center`
+                }, { duration: 1200, fill: "forwards" });
+            }
+        };
+
+        
+        function openModal(imgElement) {
+            let modal = document.getElementById("modal");
+            let modalImg = document.getElementById("modalImg");
+            modal.style.display = "flex";
+            modalImg.src = imgElement.src;
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

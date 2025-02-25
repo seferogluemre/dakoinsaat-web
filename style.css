@@ -1,0 +1,248 @@
+
+body{
+  background-color: #212529 !important; 
+}
+    /* Navbar arka planı siyah */
+    .navbar {
+        background-color: #212529 !important;
+      }
+  
+      /* Linkler beyaz */
+      .navbar-nav .nav-link, .navbar-brand {
+        color: white !important;
+      }
+  
+      /* Dropdown menüdeki linkler de beyaz olsun */
+      .dropdown-menu {
+        background-color: #000; /* Dropdown arka planı da siyah */
+      }
+  
+      .dropdown-menu .dropdown-item {
+        color: white !important;
+      }
+  
+      /* Hover ile link renk değişimi */
+      .navbar-nav .nav-link:hover, .dropdown-menu .dropdown-item:hover {
+        color: #ddd !important;
+      }
+
+       
+/*     Bootstrap Carousel  */
+  
+   .card_img  { 
+     
+     height: 400px;
+
+   }
+
+   @keyframes zoomI {
+    0%{
+      transform: scale(1.2);
+    }
+
+    100%{
+      transform: scale(1);
+    }
+   }
+
+  
+  .carousel-inner img {
+    height: 800px;  
+    object-fit: fill; 
+    animation: zoomI 1s ease-in-out ;
+
+
+  }
+
+  @media (max-width: 768px) {
+    .carousel-inner img {
+      height: 300px;
+    }
+  }
+
+
+  .vision-section {
+    background-color: #212529;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+  
+  .vision-section h3 {
+    color: white !important; 
+  }
+  
+  .vision-section .lead {
+    font-size: 1.25rem;
+    color: white !important;   
+  }
+
+
+  /* vizyon  misyon */
+
+  .bg-dark {
+    background-color: #212529; 
+  }
+  
+  .text-white {
+    color: #fff; 
+  }
+  
+  .border-light {
+    border-color: #fff; 
+  }
+  
+  .p-4 {
+    padding: 1.5rem; 
+  }
+  
+  .rounded {
+    border-radius: 10px; 
+  }
+  .divider{
+    height: 3px;
+    background-color: #fff;
+  }
+
+  .mission{
+
+    transform:translateY(-60px);
+  }
+
+  .projet-section .col-lg-4 img{
+
+     width: 100%;
+    
+  }
+
+
+
+
+
+/*   aboutcss */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&display=swap");
+
+#corrosel-body {
+  font-family: "Nunito", cursive;
+  color: #efefef;
+  text-align: center;
+  padding: 4em 0;
+  background-color: #212123;
+}
+
+.conteudo__geral {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#corrosel-body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d1e22;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card_img img {
+  display: block;
+  max-width: 100%;
+  height: 75%;
+  object-fit: cover;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-carrossel {
+  --widthItem: 150px;
+  --heightItem: 100px;
+  width: var(--widthItem);
+  height: var(--heightItem);
+  perspective: 1000px;
+}
+
+.carrossel {
+  --rotatey: 0;
+  font-size: 4rem;
+  position: relative;
+  transform: rotatey(var(--rotatey));
+  transform-style: preserve-3d;
+  user-select: none;
+  cursor: grab;
+}
+
+.carrossel-item {
+  opacity: 0.5;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: opacity 0.5s;
+}
+
+.carrossel-item:hover {
+  opacity: 1;
+}
+
+.carrossel,
+.carrossel-item {
+  width: 100%;
+  height: 100%;
+}
+/* background: linear-gradient(-229deg, #642B73, #C6426E); */
+
+.carrossel-item:nth-child(1) {
+  --rotatey: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  background: linear-gradient(-229deg, #fbd52d, #ef3a7b);
+}
+
+.carrossel-item:nth-child(2) {
+  --rotatey: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  background: linear-gradient(-229deg, #ff70af, #5fa8f5);
+}
+
+.carrossel-item:nth-child(3) {
+  --rotatey: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  background: linear-gradient(-229deg, #0cebeb, #29ffc6);
+}
+.carrossel-item:nth-child(4) {
+  --rotatey: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  background: linear-gradient(-229deg, #88f7f9, #048fff);
+}
+
+.carrossel-item:nth-child(5) {
+  --rotate: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  background: linear-gradient(-229deg, #0093e9, #80d0c7);
+}
+
+.carrossel-item:nth-child(6) {
+  --rotatey: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  background: linear-gradient(-229deg, #cf91ff, #5782f5);
+}
+
+@media screen and (min-width: 576px) {
+  .container-carrossel {
+    --widthItem: 250px;
+    --heightItem: 200px;
+  }
+}
