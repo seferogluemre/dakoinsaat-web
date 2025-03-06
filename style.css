@@ -1,119 +1,121 @@
-
-body{
-  background-color: #212529 !important; 
+body {
+  background-color: #212529 !important;
 }
-    /* Navbar arka planı siyah */
-    .navbar {
-        background-color: #212529 !important;
-      }
-  
-      /* Linkler beyaz */
-      .navbar-nav .nav-link, .navbar-brand {
-        color: white !important;
-      }
-  
-      /* Dropdown menüdeki linkler de beyaz olsun */
-      .dropdown-menu {
-        background-color: #000; /* Dropdown arka planı da siyah */
-      }
-  
-      .dropdown-menu .dropdown-item {
-        color: white !important;
-      }
-  
-      /* Hover ile link renk değişimi */
-      .navbar-nav .nav-link:hover, .dropdown-menu .dropdown-item:hover {
-        color: #ddd !important;
-      }
 
-       
+/* Navbar arka planı siyah */
+.navbar {
+  background-color: #212529 !important;
+}
+
+/* Linkler beyaz */
+.navbar-nav .nav-link,
+.navbar-brand {
+  color: white !important;
+}
+
+/* Dropdown menüdeki linkler de beyaz olsun */
+.dropdown-menu {
+  background-color: #000;
+  /* Dropdown arka planı da siyah */
+}
+
+.dropdown-menu .dropdown-item {
+  color: white !important;
+}
+
+/* Hover ile link renk değişimi */
+.navbar-nav .nav-link:hover,
+.dropdown-menu .dropdown-item:hover {
+  color: #ddd !important;
+}
+
 /*     Bootstrap Carousel  */
-  
-   .card_img  { 
-     
-     height: 400px;
 
-   }
+.card_img {
 
-   @keyframes zoomI {
-    0%{
-      transform: scale(1.2);
-    }
+  height: 400px;
 
-    100%{
-      transform: scale(1);
-    }
-   }
+}
 
-  
+@keyframes zoomI {
+  0% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.carousel-inner img {
+  height: 800px;
+  object-fit: fill;
+  animation: zoomI 1s ease-in-out;
+
+
+}
+
+@media (max-width: 768px) {
   .carousel-inner img {
-    height: 800px;  
-    object-fit: fill; 
-    animation: zoomI 1s ease-in-out ;
+    height: 300px;
+  }
+}
+
+.vision-section {
+  background-color: #212529;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.vision-section h3 {
+  color: white !important;
+}
+
+.vision-section .lead {
+  font-size: 1.25rem;
+  color: white !important;
+}
 
 
-  }
+/* vizyon  misyon */
 
-  @media (max-width: 768px) {
-    .carousel-inner img {
-      height: 300px;
-    }
-  }
+.bg-dark {
+  background-color: #212529;
+}
 
+.text-white {
+  color: #fff;
+}
 
-  .vision-section {
-    background-color: #212529;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-  }
-  
-  .vision-section h3 {
-    color: white !important; 
-  }
-  
-  .vision-section .lead {
-    font-size: 1.25rem;
-    color: white !important;   
-  }
+.border-light {
+  border-color: #fff;
+}
 
+.p-4 {
+  padding: 1.5rem;
+}
 
-  /* vizyon  misyon */
+.rounded {
+  border-radius: 10px;
+}
 
-  .bg-dark {
-    background-color: #212529; 
-  }
-  
-  .text-white {
-    color: #fff; 
-  }
-  
-  .border-light {
-    border-color: #fff; 
-  }
-  
-  .p-4 {
-    padding: 1.5rem; 
-  }
-  
-  .rounded {
-    border-radius: 10px; 
-  }
-  .divider{
-    height: 3px;
-    background-color: #fff;
-  }
+.divider {
+  height: 3px;
+  background-color: #fff;
+}
 
-  .mission{
+.mission {
 
-    transform:translateY(-60px);
-  }
+  transform: translateY(-60px);
+}
 
-  .projet-section .col-lg-4 img{
+.projet-section .col-lg-4 img {
 
-     width: 100%;
-    
-  }
+  width: 100%;
+
+}
 
 
 
@@ -203,6 +205,7 @@ img {
   width: 100%;
   height: 100%;
 }
+
 /* background: linear-gradient(-229deg, #642B73, #C6426E); */
 
 .carrossel-item:nth-child(1) {
@@ -222,6 +225,7 @@ img {
   transform: rotatey(var(--rotatey)) translatez(var(--tz));
   background: linear-gradient(-229deg, #0cebeb, #29ffc6);
 }
+
 .carrossel-item:nth-child(4) {
   --rotatey: 0;
   transform: rotatey(var(--rotatey)) translatez(var(--tz));
